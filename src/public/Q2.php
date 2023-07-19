@@ -6,14 +6,17 @@ $arrayList = [
 ];
 
 foreach ($arrayList as $array) {
-    $maxMultipleOfThree = null;
+    $maxMultipleOfThree = 0;
+
     foreach ($array as $value) {
-        if ($value % 3 === 0) {
-            if ($maxMultipleOfThree === null || $value > $maxMultipleOfThree) {
-                $maxMultipleOfThree = $value;
-                // var_dump($maxMultipleOfThree);
-            }
+        if ($value % 3 !== 0) {
+            continue; 
+        }
+
+        if ($maxMultipleOfThree === null || $value > $maxMultipleOfThree) {
+            $maxMultipleOfThree = $value;
         }
     }
+
     echo $maxMultipleOfThree . "<br>";
 }
